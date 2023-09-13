@@ -1,5 +1,5 @@
 {
-  "name": "react-native-confirm",
+  "name": "@siteed/react-native-confirm",
   "version": "0.1.0",
   "description": "confirm modal for react native",
   "main": "lib/commonjs/index",
@@ -48,7 +48,8 @@
   },
   "homepage": "https://github.com/deeeed/react-native-confirm#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
@@ -82,7 +83,6 @@
   "engines": {
     "node": ">= 16.0.0"
   },
-  "packageManager": "^yarn@1.22.15",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
@@ -155,5 +155,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "react-native-paper": "^5.10.4"
   }
 }
