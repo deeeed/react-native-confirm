@@ -49,6 +49,11 @@ const WithConfirm = () => {
 export default WithLogger
 ```
 
+## Try it out
+```bash
+yarn example web
+```
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
