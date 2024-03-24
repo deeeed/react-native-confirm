@@ -11,11 +11,42 @@ npm install react-native-confirm
 ## Usage
 
 ```js
-import { multiply } from 'react-native-confirm';
+import * as React from 'react';
 
-// ...
+import { ConfirmProvider, useConfirm } from '@siteed/react-native-confirm';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { PaperProvider } from 'react-native-paper';
 
-const result = await multiply(3, 7);
+const App = () => {
+  const doConfirm = useConfirm();
+
+  return (
+    <View style={styles.container}>
+      <Button
+        onPress={async () => {
+          const result = await doConfirm({ title: "Are you sure?" });
+          console.log('result', result);
+        }}
+        title="Confirm"
+      />
+      <Text>App</Text>
+    </View>
+  );
+};
+
+const WithConfirm = () => {
+  return (
+    <SafeAreaProvider>
+      <PaperProvider>
+        <ConfirmProvider>
+          <App />
+        </ConfirmProvider>
+      </PaperProvider>
+    </SafeAreaProvider>
+  );
+};
+export default WithLogger
 ```
 
 ## Contributing

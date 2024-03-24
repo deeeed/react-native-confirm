@@ -75,7 +75,7 @@ export const ConfirmProvider: FunctionComponent<ConfirmProviderProps> = ({
   return (
     <ConfirmContext.Provider value={confirm}>
       {children}
-      {isVisible && (
+      {isVisible ? (
         <Portal>
           <Dialog
             style={dialogStyle}
@@ -84,7 +84,7 @@ export const ConfirmProvider: FunctionComponent<ConfirmProviderProps> = ({
           >
             <Dialog.Content>
               <Text style={styles.title}>{title}</Text>
-              {notice && <Text style={styles.notice}>{notice}</Text>}
+              {notice ? <Text style={styles.notice}>{notice}</Text> : undefined}
             </Dialog.Content>
             <Dialog.Actions>
               <Button onPress={() => handleConfirm(true)}>Yes</Button>
@@ -92,7 +92,7 @@ export const ConfirmProvider: FunctionComponent<ConfirmProviderProps> = ({
             </Dialog.Actions>
           </Dialog>
         </Portal>
-      )}
+      ) : undefined}
     </ConfirmContext.Provider>
   );
 };
